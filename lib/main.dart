@@ -8,7 +8,6 @@ void main() {
 
 final player = AudioPlayer(playerId: 'MyUniquePlayer');
 
-
 class MyDurumApp extends StatelessWidget {
   const MyDurumApp({Key? key}) : super(key: key);
 
@@ -34,14 +33,51 @@ class MyContainer extends StatefulWidget {
 class _MyContainerState extends State<MyContainer> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: TextButton(
-            onPressed: () {
-              setState((){
-                player.setSource(AssetSource('bongo.wav'));
-                player.resume();
-              });
-            },
-            child: Text('Press')));
+    return Row(
+      children: [
+        Expanded(
+            child: Column(
+          children: [
+            Expanded(
+                child: Container(
+              color: Colors.blue,
+            )),
+            Expanded(
+                child: Container(
+              color: Colors.green,
+            )),
+            Expanded(
+                child: Container(
+              color: Colors.lime,
+            )),
+          ],
+        )),
+        Expanded(
+            child: Column(
+          children: [
+            Expanded(
+                child: ElevatedButton(
+                    style: ButtonStyle(),
+                    onPressed: () {
+                      setState(() {
+                        player.setSource(AssetSource('clap2.wav'));
+                        player.resume();
+                      });
+                    },
+                    child: Container(
+                      color: Colors.red,
+                    ))),
+            Expanded(
+                child: Container(
+              color: Colors.deepPurple,
+            )),
+            Expanded(
+                child: Container(
+              color: Colors.white38,
+            )),
+          ],
+        )),
+      ],
+    );
   }
 }

@@ -73,7 +73,7 @@ class _MyContainerState extends State<MyContainer> {
       ),
       onPressed: () {
         setState(() {
-          playerSetAndResume('$voice');
+          playerSetAndResume(voice);
         });
       },
       child: Container(

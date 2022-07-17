@@ -45,7 +45,7 @@ class _MyContainerState extends State<MyContainer> {
                   ),
                   onPressed: () {
                     setState(() {
-                      player.setSource(AssetSource('clap2.wav'));
+                      player.setSource(AssetSource('bip.wav'));
                       player.resume();
                     });
                   },
@@ -61,7 +61,7 @@ class _MyContainerState extends State<MyContainer> {
                   ),
                   onPressed: () {
                     setState(() {
-                      player.setSource(AssetSource('clap2.wav'));
+                      player.setSource(AssetSource('bongo.wav'));
                       player.resume();
                     });
                   },
@@ -77,7 +77,7 @@ class _MyContainerState extends State<MyContainer> {
                   ),
                   onPressed: () {
                     setState(() {
-                      player.setSource(AssetSource('clap2.wav'));
+                      player.setSource(AssetSource('woo.wav'));
                       player.resume();
                     });
                   },

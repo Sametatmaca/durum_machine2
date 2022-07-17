@@ -1,6 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-//import 'package:audioplaye';
 
 void main() {
   runApp(const MyDurumApp());
@@ -39,42 +38,108 @@ class _MyContainerState extends State<MyContainer> {
             child: Column(
           children: [
             Expanded(
-                child: Container(
-              color: Colors.blue,
-            )),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0.0)),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      player.setSource(AssetSource('clap2.wav'));
+                      player.resume();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.blue,
+                  ),
+                ),),
             Expanded(
-                child: Container(
-              color: Colors.green,
-            )),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0.0)),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      player.setSource(AssetSource('clap2.wav'));
+                      player.resume();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.green,
+                  ),
+                ),),
             Expanded(
-                child: Container(
-              color: Colors.lime,
-            )),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0.0)),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      player.setSource(AssetSource('clap2.wav'));
+                      player.resume();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.lime,
+                  ),
+                ),),
           ],
         )),
         Expanded(
             child: Column(
           children: [
             Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                      EdgeInsets.all(0.0)),
+                ),
+                onPressed: () {
+                  setState(() {
+                    player.setSource(AssetSource('clap2.wav'));
+                    player.resume();
+                  });
+                },
+                child: Container(
+                  color: Colors.red,
+                ),
+              ),
+            ),
+            Expanded(
                 child: ElevatedButton(
-                    style: ButtonStyle(),
-                    onPressed: () {
-                      setState(() {
-                        player.setSource(AssetSource('clap2.wav'));
-                        player.resume();
-                      });
-                    },
-                    child: Container(
-                      color: Colors.red,
-                    ))),
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0.0)),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      player.setSource(AssetSource('clap1.wav'));
+                      player.resume();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.purple,
+                  ),
+                ),),
             Expanded(
-                child: Container(
-              color: Colors.deepPurple,
-            )),
-            Expanded(
-                child: Container(
-              color: Colors.white38,
-            )),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(0.0)),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      player.setSource(AssetSource('clap3.wav'));
+                      player.resume();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.white,
+                  ),
+                ),
+            ),
           ],
         )),
       ],

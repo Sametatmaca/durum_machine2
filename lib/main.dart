@@ -38,111 +38,52 @@ class _MyContainerState extends State<MyContainer> {
             child: Column(
           children: [
             Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0.0)),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      player.setSource(AssetSource('bip.wav'));
-                      player.resume();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.blue,
-                  ),
-                ),),
+              child: buildElevatedButton(Colors.blue, 'how'),
+            ),
             Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0.0)),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      player.setSource(AssetSource('bongo.wav'));
-                      player.resume();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.green,
-                  ),
-                ),),
+              child: buildElevatedButton(Colors.green, 'bongo'),
+            ),
             Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0.0)),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      player.setSource(AssetSource('woo.wav'));
-                      player.resume();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.lime,
-                  ),
-                ),),
+              child: buildElevatedButton(Colors.lime, 'woo'),
+            ),
           ],
         )),
         Expanded(
             child: Column(
           children: [
             Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.all(0.0)),
-                ),
-                onPressed: () {
-                  setState(() {
-                    player.setSource(AssetSource('clap2.wav'));
-                    player.resume();
-                  });
-                },
-                child: Container(
-                  color: Colors.red,
-                ),
-              ),
+              child: buildElevatedButton(Colors.red, 'clap1'),
             ),
             Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0.0)),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      player.setSource(AssetSource('clap1.wav'));
-                      player.resume();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.purple,
-                  ),
-                ),),
+              child: buildElevatedButton(Colors.purple, 'clap2'),
+            ),
             Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(0.0)),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      player.setSource(AssetSource('clap3.wav'));
-                      player.resume();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.white,
-                  ),
-                ),
+              child: buildElevatedButton(Colors.grey, 'clap3'),
             ),
           ],
         )),
       ],
     );
+  }
+
+  ElevatedButton buildElevatedButton(MaterialColor buildcolor, String voice) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0.0)),
+      ),
+      onPressed: () {
+        setState(() {
+          playerSetAndResume('$voice');
+        });
+      },
+      child: Container(
+        color: buildcolor,
+      ),
+    );
+  }
+
+  void playerSetAndResume(String voice) {
+    player.setSource(AssetSource('$voice.wav'));
+    player.resume();
   }
 }
